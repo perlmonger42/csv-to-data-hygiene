@@ -1,0 +1,5 @@
+TXT format does not support newlines in fields
+This value contains a tab:	See?
+This one contains a comma, right here
+This value has a double quote: "That's right"
+This value has a backslash: C:\Users\Eve

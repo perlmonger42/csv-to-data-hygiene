@@ -1,0 +1,7 @@
+Name,Description
+Alice,"This is a description with a newline:
+And this is the second line"
+Bob,This value contains a tab:	See?
+Charlie,"This one contains a comma, right here"
+Diana,"This value has a double quote: ""That's right"""
+Eve,"This value has a backslash: C:\Users\Eve"

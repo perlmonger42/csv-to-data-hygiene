@@ -1,0 +1,28 @@
+{
+  "action": "delete_identity",
+  "datasetId": "66f4161cc19b0f2aef3edf10",
+  "displayName": "output/sample-TSV-001.json",
+  "description": "a simple sample",
+  "identities": [
+    {
+      "namespace": "email",
+      "identity": "TSV format does not support newlines in fields"
+    },
+    {
+      "namespace": "email",
+      "identity": "This value contains a tab:\tSee?"
+    },
+    {
+      "namespace": "email",
+      "identity": "This one contains a comma, right here"
+    },
+    {
+      "namespace": "email",
+      "identity": "This value has a double quote: \"That's right\""
+    },
+    {
+      "namespace": "email",
+      "identity": "This value has a backslash: C:\\Users\\Eve"
+    }
+  ]
+}

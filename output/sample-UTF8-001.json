@@ -1,0 +1,28 @@
+{
+  "action": "delete_identity",
+  "datasetId": "66f4161cc19b0f2aef3edf10",
+  "displayName": "output/sample-UTF8-001.json",
+  "description": "a simple sample",
+  "identities": [
+    {
+      "namespace": "email",
+      "identity": "\u4e8c"
+    },
+    {
+      "namespace": "email",
+      "identity": "dos"
+    },
+    {
+      "namespace": "email",
+      "identity": "two"
+    },
+    {
+      "namespace": "email",
+      "identity": "deux"
+    },
+    {
+      "namespace": "email",
+      "identity": "\u0434\u0432\u0430"
+    }
+  ]
+}

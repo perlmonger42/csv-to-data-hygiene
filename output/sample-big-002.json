@@ -1,0 +1,48 @@
+{
+  "action": "delete_identity",
+  "datasetId": "66f4161cc19b0f2aef3edf10",
+  "displayName": "output/sample-big-002.json",
+  "description": "a simple sample",
+  "identities": [
+    {
+      "namespace": "email",
+      "identity": "100001"
+    },
+    {
+      "namespace": "email",
+      "identity": "100002"
+    },
+    {
+      "namespace": "email",
+      "identity": "100003"
+    },
+    {
+      "namespace": "email",
+      "identity": "100004"
+    },
+    {
+      "namespace": "email",
+      "identity": "100005"
+    },
+    {
+      "namespace": "email",
+      "identity": "100006"
+    },
+    {
+      "namespace": "email",
+      "identity": "100007"
+    },
+    {
+      "namespace": "email",
+      "identity": "100008"
+    },
+    {
+      "namespace": "email",
+      "identity": "100009"
+    },
+    {
+      "namespace": "email",
+      "identity": "100010"
+    }
+  ]
+}
