@@ -5,23 +5,33 @@
   "description": "a simple sample",
   "identities": [
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "TSV format does not support newlines in fields"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value contains a tab:\tSee?"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This one contains a comma, right here"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value has a double quote: \"That's right\""
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value has a backslash: C:\\Users\\Eve"
     }
   ]

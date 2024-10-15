@@ -5,23 +5,33 @@
   "description": "a simple sample",
   "identities": [
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "\u4e8c"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "dos"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "two"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "deux"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "\u0434\u0432\u0430"
     }
   ]

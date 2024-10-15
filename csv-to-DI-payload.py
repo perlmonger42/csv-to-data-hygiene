@@ -86,7 +86,7 @@ def write_json_files(input_file, identities, output_prefix):
         write_json_file(output_file, chunk, input_file)
 
 def write_json_file(output_file, chunk, input_file):
-    identities = [{"namespace": NAMESPACE, "identity": identity} for identity in chunk]
+    identities = [{"namespace": { "code": NAMESPACE }, "identity": identity} for identity in chunk]
     output_data = {
         "action": "delete_identity",
         "datasetId": DATASET_ID,

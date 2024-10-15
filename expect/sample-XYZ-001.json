@@ -1,27 +1,37 @@
 {
   "action": "delete_identity",
   "datasetId": "66f4161cc19b0f2aef3edf10",
-  "displayName": "output/sample-TXT-001.json",
+  "displayName": "output/sample-XYZ-001.json",
   "description": "a simple sample",
   "identities": [
     {
-      "namespace": "email",
-      "identity": "TXT format does not support newlines in fields"
+      "namespace": {
+        "code": "email"
+      },
+      "identity": "Unrecognized filename extension defaults to TXT format."
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value contains a tab:\tSee?"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This one contains a comma, right here"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value has a double quote: \"That's right\""
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value has a backslash: C:\\Users\\Eve"
     }
   ]

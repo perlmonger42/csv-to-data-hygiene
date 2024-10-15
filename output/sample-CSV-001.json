@@ -5,23 +5,33 @@
   "description": "a simple sample",
   "identities": [
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This is a description with a newline:\nAnd this is the second line"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value contains a tab:\tSee?"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This one contains a comma, right here"
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value has a double quote: \"That's right\""
     },
     {
-      "namespace": "email",
+      "namespace": {
+        "code": "email"
+      },
       "identity": "This value has a backslash: C:\\Users\\Eve"
     }
   ]

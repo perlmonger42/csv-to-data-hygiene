@@ -110,7 +110,7 @@ def write_json_files(input_file, identities, output_prefix)
 end
 
 def write_json_file(output_file, chunk, input_file)
-  identities = chunk.map { |identity| { "namespace" => $NAMESPACE, "identity" => identity } }
+  identities = chunk.map { |identity| { "namespace" => { "code": $NAMESPACE } , "identity" => identity } }
   output_data = {
     "action" => "delete_identity",
     "datasetId" => $DATASET_ID,
