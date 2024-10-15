@@ -15,7 +15,12 @@ NAMESPACE = None
 DISPLAY_NAME = None
 DESCRIPTION = None
 OUTPUT_DIR = "."
-VERBOSE = False
+VERBOSITY = 1  # 0=quiet, 1=normal, 1=verbose, 2=very verbose
+
+def very_verbose(): return VERBOSITY >= 3
+def verbose(): return VERBOSITY >= 2
+def normal_verbosity(): return VERBOSITY >= 1
+def quiet_verbosity(): return VERBOSITY == 0
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -34,7 +39,9 @@ def parse_args():
     parser.add_argument('--txt', action='store_true', help="Force input files to be read as TXT.")
     parser.add_argument('--header', dest='header', action='store_true', help="Indicate that the input files have headers.")
     parser.add_argument('--no-header', dest='header', action='store_false', help="Indicate that line 1 of input files is data.")
+    parser.add_argument('--quiet', action='store_true', help="Suppress output.")
     parser.add_argument('--verbose', '-v', action='store_true', help="Enable verbose output.")
+    parser.add_argument('--very-verbose', '-vv', action='store_true', help="Enable very verbose output.")
     parser.add_argument('--output-dir', help="Directory to write the output JSON files.", default='.')
     parser.set_defaults(header=None)
     return parser.parse_args()
@@ -97,23 +104,22 @@ def write_json_file(output_file, chunk, input_file):
     with open(output_file, 'w') as jsonfile:
         json.dump(output_data, jsonfile, indent=2)
         jsonfile.write('\n')  # Ensure terminal newline
-    if VERBOSE:
+    if verbose():
         print(f"Wrote {output_file}")
 
 def main():
-    global DATASET_ID, NAMESPACE, DISPLAY_NAME, DESCRIPTION, OUTPUT_DIR, VERBOSE
+    global DATASET_ID, NAMESPACE, DISPLAY_NAME, DESCRIPTION, OUTPUT_DIR, VERBOSITY
 
     args = parse_args()
-
+    VERBOSITY = 3 if args.very_verbose else 2 if args.verbose else 0 if args.quiet else 1
     DATASET_ID = args.dataset_id
     NAMESPACE = args.namespace
     DISPLAY_NAME = args.display_name
     DESCRIPTION = args.description
     OUTPUT_DIR = args.output_dir
-    VERBOSE = args.verbose
 
     for input_file in args.input_file:
-        if VERBOSE:
+        if normal_verbosity():
             print(f"Processing file: {input_file}", file=sys.stderr)
 
         output_prefix = os.path.splitext(os.path.basename(input_file))[0]

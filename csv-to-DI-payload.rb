@@ -14,7 +14,12 @@ $NAMESPACE = nil
 $DISPLAY_NAME = nil
 $DESCRIPTION = nil
 $OUTPUT_DIR = "."
-$VERBOSE = false
+$VERBOSITY = 1  # 0 = quiet, 1 = normal, 2 = verbose, 3 = very verbose
+
+def very_verbose; $VERBOSITY >= 3; end
+def verbose; $VERBOSITY >= 2; end
+def normal_verbosity; $VERBOSITY >= 1; end
+def quiet_verbosity; $VERBOSITY < 1; end
 
 def parse_args
   options = { header: nil }
@@ -30,7 +35,9 @@ def parse_args
     opts.on("--tsv", "Force input files to be read as TSV.") { options[:format] = :tsv }
     opts.on("--txt", "Force input files to be read as TXT.") { options[:format] = :txt }
     opts.on("--[no-]header", "Indicate whether the input files have headers (default true except for txt)") { |v| options[:header] = v }
-    opts.on("--verbose", "-v", "Enable verbose output.") { options[:verbose] = true }
+    opts.on("--quiet", "Suppress output") { options[:verbosity] = 0 }
+    opts.on("--verbose", "-v", "Enable verbose output.") { options[:verbosity] = 2 }
+    opts.on("--very-verbose", "-vv", "Enable very verbose output.") { options[:verbosity] = 3 }
     opts.on("--output-dir OUTPUT_DIR", "Directory to write the output JSON files.") { |v| options[:output_dir] = v }
 
     opts.separator ""
@@ -121,7 +128,7 @@ def write_json_file(output_file, chunk, input_file)
   File.open(output_file, 'w') do |jsonfile|
     jsonfile.puts(JSON.pretty_generate(output_data, ascii_only: true))
   end
-  puts "Wrote #{output_file}" if $VERBOSE
+  puts "Wrote #{output_file}" if verbose
 end
 
 def main
@@ -132,10 +139,10 @@ def main
   $DISPLAY_NAME = options[:display_name]
   $DESCRIPTION = options[:description]
   $OUTPUT_DIR = options[:output_dir] || "."
-  $VERBOSE = options[:verbose] || false
+  $VERBOSITY = options[:verbosity] || 1
 
   options[:input_files].each do |input_file|
-    puts "Processing file: #{input_file}" if $VERBOSE
+    puts "Processing file: #{input_file}" if normal_verbosity
 
     output_prefix = File.basename(input_file, File.extname(input_file))
 
