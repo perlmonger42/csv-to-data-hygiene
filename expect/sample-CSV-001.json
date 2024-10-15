@@ -8,31 +8,31 @@
       "namespace": {
         "code": "email"
       },
-      "identity": "This is a description with a newline:\nAnd this is the second line"
+      "id": "This is a description with a newline:\nAnd this is the second line"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "This value contains a tab:\tSee?"
+      "id": "This value contains a tab:\tSee?"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "This one contains a comma, right here"
+      "id": "This one contains a comma, right here"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "This value has a double quote: \"That's right\""
+      "id": "This value has a double quote: \"That's right\""
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "This value has a backslash: C:\\Users\\Eve"
+      "id": "This value has a backslash: C:\\Users\\Eve"
     }
   ]
 }

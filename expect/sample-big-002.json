@@ -8,61 +8,61 @@
       "namespace": {
         "code": "email"
       },
-      "identity": "100001"
+      "id": "100001"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100002"
+      "id": "100002"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100003"
+      "id": "100003"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100004"
+      "id": "100004"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100005"
+      "id": "100005"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100006"
+      "id": "100006"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100007"
+      "id": "100007"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100008"
+      "id": "100008"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100009"
+      "id": "100009"
     },
     {
       "namespace": {
         "code": "email"
       },
-      "identity": "100010"
+      "id": "100010"
     }
   ]
 }
