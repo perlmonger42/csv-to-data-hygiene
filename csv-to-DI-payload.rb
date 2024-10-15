@@ -62,7 +62,7 @@ def read_file(input_file, column_arg, delimiter, has_header, is_txt)
         headers = has_header ? csv.shift : nil
 
         selected_column = if has_header
-                            if column_arg.nil?
+                            if column_arg.nil? || is_txt
                               headers.first
                             elsif column_arg =~ /^\d+$/
                               headers[column_arg.to_i - 1]

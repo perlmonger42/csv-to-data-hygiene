@@ -50,7 +50,7 @@ def read_file(input_file, column_arg, delimiter, has_header, is_txt):
             reader = csv.DictReader(file, delimiter=delimiter)
             headers = reader.fieldnames
 
-            if column_arg is None:
+            if column_arg is None or is_txt:
                 selected_column = headers[0]  # default to first column
             elif column_arg.isdigit():
                 col_idx = int(column_arg) - 1  # 1-based index
@@ -118,23 +118,25 @@ def main():
 
         output_prefix = os.path.splitext(os.path.basename(input_file))[0]
 
+        is_txt = False  # Assume CSV or TSV format until shown otherwise
         if args.txt:
             delimiter = None
             is_txt = True
         elif args.tsv:
             delimiter = '\t'
-            is_txt = False
         elif args.csv:
             delimiter = ','
-            is_txt = False
         else:
+            # Choose format based on filename extension.
+            # Unrecognized filename extensions are treated as TXT format.
             extension = os.path.splitext(input_file)[1].lower()
-            if extension == '.txt':
+            if extension == '.tsv':
+                delimiter = '\t'
+            elif extension == '.csv':
+                delimiter = ','
+            else:
                 delimiter = None
                 is_txt = True
-            else:
-                delimiter = '\t' if extension == '.tsv' else ','
-                is_txt = False
 
         header = args.header if args.header is not None else not is_txt
         identities = read_file(input_file, args.column, delimiter, header, is_txt)
